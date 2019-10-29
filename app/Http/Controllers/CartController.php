@@ -102,9 +102,18 @@ class CartController extends Controller
      * @param  \App\Cart  $cart
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Cart $cart)
+    public function update(Request $request, $id)
     {
-        //
+        $cart = Cart::find($id);
+        if(!is_null($cart)){
+            $cart->product_quantity = $request->product_quantity;
+            $cart->save();
+        }else{
+            return redirect()->route('carts');
+        }
+        session()->flash('success', 'Item has been added to carts');
+        return back();
+
     }
 
     /**
@@ -113,8 +122,15 @@ class CartController extends Controller
      * @param  \App\Cart  $cart
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Cart $cart)
+    public function destroy($id)
     {
-        //
+         $cart = Cart::find($id);
+        if(!is_null($cart)){
+            $cart->delete();
+        }else{
+            return redirect()->route('carts');
+        }
+        session()->flash('success', 'Item has been deleted from carts');
+        return back();
     }
 }
