@@ -23,11 +23,25 @@ Route::group(['prefix' => 'products'], function(){
 
 //Cart Routes 
 Route::group(['prefix' => 'carts'], function(){
-	Route::get('/', 'CartController@index')->name('index');
+	Route::get('/', 'CartController@index')->name('carts.index');
 	Route::post('/store', 'CartController@store')->name('carts.store');
 	Route::post('/update/{id}', 'CartController@update')->name('carts.update');
 	Route::post('/delete/{id}', 'CartController@destroy')->name('carts.delete');
 });
+
+//Checkout Routes 
+Route::group(['prefix' => 'checkouts'], function(){
+	Route::get('/', 'frontend\CheckoutController@index')->name('checkouts.index');
+});
+
+Route::group(['prefix' => 'user'], function(){
+	Route::get('/', 'frontend\VerificationController@verify')->name('user.verification');
+	Route::get('/dashboard', 'frontend\UserController@dashboard')->name('user.dashboard');
+	Route::get('/profile', 'frontend\UserController@profile')->name('user.profile');
+	Route::post('/profile/update', 'frontend\UserController@profile_update')->name('user.profile.update');
+
+});
+
 
 
 Route::prefix('admin')->group(function () {

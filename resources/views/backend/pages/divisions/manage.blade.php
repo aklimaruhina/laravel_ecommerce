@@ -17,7 +17,7 @@
 	                </div>
 
 	                <div class="card-body">
-	                  	@include ('backend.allinfo.messages')
+	                  	<!-- @include ('backend.allinfo.messages') -->
 	                	<!-- View All Brand Table Start -->
 	                	<table class="table table-striped">
 						  <thead class="thead-dark">

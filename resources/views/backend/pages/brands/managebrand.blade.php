@@ -11,7 +11,7 @@
             <h6 class="m-0 font-weight-bold text-primary">View /Update / Delete Individual Brand</h6>
           </div>
           <div class="card-body">
-            @include('backend.allinfo.messages')
+            <!-- @include('backend.allinfo.messages') -->
             <table class="table table-stripped">
               <thead class="thead-dark">
                 <tr>

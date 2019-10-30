@@ -76,8 +76,8 @@
             </tr>
             <tr>
               <td colspan="4"></td>
-              <td colspan="1"></td>
-              <td colspan="2"><a href="" class="btn btn-dark">Proced to checkout</a></td>
+              <td colspan="1"><a href="{{ route('products') }}" class="btn btn-dark">Continue to Shopping?</a></td>
+              <td colspan="2"><a href="{{ route('checkouts.index') }}" class="btn btn-dark">Proced to checkout</a></td>
             </tr>
             
           </tbody>

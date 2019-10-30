@@ -59,6 +59,8 @@
                       </a>
 
                       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a href="{{ route('user.dashboard')}}" class="dropdown-item">Dashboard</a>
+                          <a href="{{ route('user.profile')}}" class="dropdown-item">Profile</a>
                           <a class="dropdown-item" href="{{ route('logout') }}"
                              onclick="event.preventDefault();
                                            document.getElementById('logout-form').submit();">
@@ -68,6 +70,7 @@
                           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                               @csrf
                           </form>
+
                       </div>
                     </li>
                     @endguest
@@ -158,7 +161,8 @@
                         </tr>
                       </tbody>
                     </table>
-                    <p class="text-right"> <span class="btn-viewcart"><a href="cart.html"><strong><i class="fa fa-shopping-cart"></i> View Cart</strong></a></span> <span class="btn-checkout"><a href="checkout.html"><strong><i class="fa fa-share"></i> Checkout</strong></a></span> </p>
+                    <p class="text-right"> <span class="btn-viewcart"><a href="{{ route('carts.index')}}"><strong><i class="fa fa-shopping-cart"></i> View Cart</strong></a></span> 
+                      <span class="btn-checkout"><a href="{{ route('checkouts.index')}}"><strong><i class="fa fa-share"></i> Checkout</strong></a></span> </p>
                   </div>
                 </li>
               </ul>
